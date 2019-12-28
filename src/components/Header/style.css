@@ -1,0 +1,8 @@
+.nav, .footer{
+    background-color: rgb(2,119,181);
+  }
+
+.brand-logo {
+    position: absolute;
+    left: 0px;
+}
