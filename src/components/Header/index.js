@@ -23,7 +23,7 @@ class Header extends React.Component {
                         <li><Link to="/hireme">Hire Me</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
                     </ul>
-                    <Link to="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></Link>
+                    <Link to="#" data-target="nav-mobile" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
                 </div>
             </nav>
         )
