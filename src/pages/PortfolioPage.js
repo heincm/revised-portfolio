@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.css';
-import { Link } from 'react-router-dom'
 
 class PortfolioPage extends React.Component {
     render() {
@@ -13,7 +12,7 @@ class PortfolioPage extends React.Component {
                         <div class="col s12 m4">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src='../assets/images/hangman.png' alt="hangman" />
+                                    <img src='/images/hangman.png' alt="hangman" />
                                 </div>
                                 <div class="card-content">
                                     <span class="card-title blue-text text-darken-2">Word Guess Game</span>

@@ -1,8 +1,6 @@
 import React from 'react';
 import './style.css';
 import { Link } from 'react-router-dom'
-import apple from '../assets/images/apple-code-codes-574069.jpg'
-import me from '../assets/images/me.png'
 
 class HomePage extends React.Component {
     render() {
@@ -16,12 +14,12 @@ class HomePage extends React.Component {
                             Hein</span>. I'm a web developer.</h1>
                         </div>
                     </div>
-                    <div className="parallax"><img src={apple} alt="Coding Screen" /></div>
+                    <div className="parallax"><img src={'/images/apple-code-codes-574069.jpg'} alt="Coding Screen" /></div>
                 </div>
                 <div className="container">
                     <div className="row">
                         <div className="col s12">
-                            <img className="responsive-img circle scale-transition" id="me" src={me} alt="Me" />
+                            <img className="responsive-img circle scale-transition" id="me" src={'/images/me.png'} alt="Me" />
                             <p> Hi! Welcome to my portfolio.</p>
 
                             <p>I'm originally from a small town of about 2,500 people in rural Nebraska. I went to school at
