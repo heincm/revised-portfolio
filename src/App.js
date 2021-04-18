@@ -20,8 +20,11 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route exact path="/index">
+        <Route exact path="/">
           <HomePage />
+        </Route>
+        <Route path="/index">
+            <HomePage />
         </Route>
         <Route path="/languages">
           <LanguagesPage />
