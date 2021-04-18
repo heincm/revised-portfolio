@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import PortfolioPage from './pages/PortfolioPage';
 import HireMe from './pages/HireMePage'
+import NotFound from './pages/NotFound'
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/contact">
           <Contact />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
       <Footer />

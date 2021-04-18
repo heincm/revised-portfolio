@@ -1,36 +1,37 @@
 import React from 'react';
-import './style.css';
+import '../../../src/pages/style.css'
 
-function Card(props) {
+function PortfolioCard (props) {
+
+        const { src, alt, projectName, projectDescription, link, repo } = props
+        
         return (
             <div className="col s12 m4">
                 <div className="card">
                     <div className="card-image">
-                        <img src={props.src} alt={props.alt}/>
+                        <img src={src} alt={alt} />
                     </div>
                     <div className="card-content">
-                        <span className="card-title blue-text text-darken-2">{props.projectName}</span>
-                        <p>{props.projectDescription}</p>
+                        <span className="card-title blue-text text-darken-2">{projectName}</span>
+                        <p>{projectDescription}</p>
                     </div>
                     <div className="card-action">
                         <a
-                            href={props.link}>Click
+                            href={link}>Click
             here to view the project</a>
                         <br />
                         <br />
-                        <a href={props.repo}>Click here to view the Github
+                        <a href={repo}>Click here to view the Github
             repository</a>
                     </div>
                     <div className="card-content">
                         <span className="card-title blue-text text-darken-2">Technologies Used</span>
-                        <img className="miniLogo tooltipped" data-position="bottom" data-tooltip="nodeJS"
-                            src="/images/nodeJS.png" alt="nodeJS" />
-                        <img className="miniLogo tooltipped" data-position="bottom" data-tooltip="MySQL"
-                            src="/images/MySQL.png" alt="MySQL" />
+                        {props.children}
                     </div>
                 </div>
             </div>
         )
-}
+    }
 
-export default Card;
+
+export default PortfolioCard;

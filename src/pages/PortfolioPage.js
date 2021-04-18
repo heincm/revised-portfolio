@@ -1,43 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PortfolioCard from '../components/PortfolioCard'
+import MiniLogo from '../components/MiniLogo'
 import './style.css';
+import projects from '../../src/projects.json'
 
-class PortfolioPage extends React.Component {
+class PortfolioPage extends Component {
+
     render() {
+        const myProjects = projects.map((element, i) => {
+            return (<PortfolioCard
+                src={element.img}
+                alt={element.title}
+                projectName={element.title}
+                projectDescription={element.description}
+                link={element.link}
+                repo={element.repo}
+                technologies={element.technologies}
+                key={element.title} >
+                    {element.technologies.map(what => {
+                        return(<MiniLogo miniName={what}/>)
+                    })}
+                    </PortfolioCard>
+            )
+        })
         return (
             <>
-                <div class="container">
-                    <div class="row">
+                <div className="container">
+                    <div className="row">
                         <h1>Coding Projects</h1>
                         <p>Check out the projects I've made!</p>
-                        <div class="col s12 m4">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src='/images/hangman.png' alt="hangman" />
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title blue-text text-darken-2">Word Guess Game</span>
-                                    <p>This is my first project using vanilla Javascript.</p>
-                                </div>
-                                <div class="card-action">
-                                    <a href="https://heincm.github.io/Word-Guess-Game/">Click here to view the project</a>
-                                    <br />
-                                    <br />
-                                    <a href="https://github.com/heincm/Word-Guess-Game">Click here to view the Github
-                                repository</a>
-                                </div>
-                                <div class="card-content">
-                                    <span class="card-title blue-text text-darken-2">Technologies Used</span>
-                                    <img class="miniLogo tooltipped" data-position="bottom" data-tooltip="HTML5"
-                                        src="/images/HTML5_Logo_512.png" alt="HTML5" />
-                                    <img class="miniLogo tooltipped" data-position="bottom" data-tooltip="CSS3"
-                                        src="/images/css3logo.png" alt="CSS3" />
-                                    <img class="miniLogo tooltipped" data-position="bottom" data-tooltip="JavaScript"
-                                        src="/images/JavaScript-logo.png" alt="JavaScript" />
-                                    <img class="miniLogo tooltipped" data-position="bottom" data-tooltip="Bootstrap"
-                                        src="/images/bootstrap-solid.svg" alt="BootStrap" />
-                                </div>
-                            </div>
-                        </div>
+                        {myProjects}
                     </div>
                 </div>
             </>

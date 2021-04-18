@@ -28,7 +28,7 @@ class HomePage extends React.Component {
                         in Student Affairs.</p>
 
                             <p>I moved to Platteville, Wisconsin for three years where I worked as a professional Residence
-                                Hall Director. In this role I gained my first hands-on experience working with HTML when I helped
+                                Hall Director. In this role I gained my first hands-on experience working with frontend web development when I helped
                                 migrate our departmental website through changes to two different content management systems.
                     </p>
 
