@@ -1,13 +1,12 @@
 import React from 'react';
-import './style.css';
 
 class Contact extends React.Component {
     render() {
         return (
             <main>
             <div className="container contact-container">
-                <p>Use the form below to send me a message or email me at <a
-                        href="mailto:chris.m.hein@gmail.com?Subject=Website%20Email">chris.m.hein@gmail.com</a>.</p>
+                <p>Use the form below to send me a message or email me at
+                <a href="mailto:chris.m.hein@gmail.com?Subject=Website%20Email">chris.m.hein@gmail.com</a>.</p>
                 <div className="row">
                     <form className="col s12">
                         <div className="row">

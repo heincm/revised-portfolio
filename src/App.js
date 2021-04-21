@@ -14,34 +14,36 @@ import PortfolioPage from './pages/PortfolioPage';
 import HireMe from './pages/HireMePage'
 import NotFound from './pages/NotFound'
 
-
 function App() {
   return (
     <Router>
       <Header />
-      <Switch>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route path="/index">
+      <div className='page-layout-container'>
+        <Switch>
+          <Route exact path="/">
             <HomePage />
-        </Route>
-        <Route path="/languages">
-          <LanguagesPage />
-        </Route>
-        <Route path="/portfolio">
-          <PortfolioPage />
-        </Route>
-        <Route path="/hireme">
-          <HireMe />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
+          </Route>
+          <Route path="/index">
+            <HomePage />
+          </Route>
+          <Route path="/languages">
+            <LanguagesPage />
+          </Route>
+          <Route path="/portfolio">
+            <PortfolioPage />
+          </Route>
+          <Route path="/hireme">
+            <HireMe />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+      </div>
+
       <Footer />
     </Router>
   );

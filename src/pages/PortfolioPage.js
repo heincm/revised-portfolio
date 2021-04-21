@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PortfolioCard from '../components/PortfolioCard'
 import MiniLogo from '../components/MiniLogo'
-import './style.css';
 import projects from '../../src/projects.json'
 
 class PortfolioPage extends Component {
