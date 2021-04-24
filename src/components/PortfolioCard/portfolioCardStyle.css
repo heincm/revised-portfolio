@@ -6,7 +6,8 @@
 }
 
 .card {
-    min-height: 750px
+    min-height: 750px;
+    min-width: 210px;
 }
 
 .miniLogo {

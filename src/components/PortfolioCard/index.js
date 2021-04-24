@@ -6,7 +6,7 @@ function PortfolioCard(props) {
     const { src, alt, projectName, projectDescription, link, repo } = props
 
     return (
-        <div className="col s12 m4">
+        <div className="col s12 m6 l4">
             <div className="card">
                 <div className="card-image">
                     <img src={src} alt={alt} />

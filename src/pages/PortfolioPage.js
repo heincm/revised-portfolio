@@ -6,7 +6,7 @@ import projects from '../../src/projects.json'
 class PortfolioPage extends Component {
 
     render() {
-        const myProjects = projects.map((element, i) => {
+        const myProjects = projects.map(element => {
             return (<PortfolioCard
                 src={element.img}
                 alt={element.title}
@@ -17,7 +17,7 @@ class PortfolioPage extends Component {
                 technologies={element.technologies}
                 key={element.title} >
                     {element.technologies.map(what => {
-                        return(<MiniLogo miniName={what}/>)
+                        return(<MiniLogo miniName={what} key={what}/>)
                     })}
                     </PortfolioCard>
             )
