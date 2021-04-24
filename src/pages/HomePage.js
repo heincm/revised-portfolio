@@ -30,7 +30,7 @@ class HomePage extends React.Component {
 
                 </ParallaxBanner>
 
-                <div className="container">
+                <div className="container containerized">
                     <div className="row">
                         <div className="col s12">
                             <img className="responsive-img circle scale-transition" id="me" src={'/images/me.png'} alt="Me" />

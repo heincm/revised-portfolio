@@ -11,7 +11,7 @@
   max-width: 200px;
 }
 
-.container {
+.containerized {
   min-height: calc(100vh - 425px);
   /* display: flex;
   align-items: center; */
