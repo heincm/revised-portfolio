@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PortfolioCard from '../components/PortfolioCard'
 import MiniLogo from '../components/MiniLogo'
 import projects from '../../src/projects.json'
-
+// TODO: Need to figure out how to change text for street right
+// TODO: also need to reverse these so street right comes up first
+// TODO: add the python twitter bot to this list
 class PortfolioPage extends Component {
 
     render() {
@@ -17,7 +19,7 @@ class PortfolioPage extends Component {
                 technologies={element.technologies}
                 key={element.title} >
                     {element.technologies.map(what => {
-                        return(<MiniLogo miniName={what} key={what}/>)
+                        return(<MiniLogo miniName={what} key={what} myClass='miniLogo' />)
                     })}
                     </PortfolioCard>
             )

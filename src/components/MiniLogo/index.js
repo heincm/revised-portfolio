@@ -31,15 +31,17 @@ let whichImage = function (miniName) {
             return 'images/MongoDB.png'
         case 'React Native':
             return 'images/react.svg'
+        case 'Sequelize':
+            return 'images/sequelize.png'
         default: return 'bye'
     }
 }
 
 function MiniLogo(props) {
-    const { miniName } = props
-
+    const { miniName, myClass } = props
+debugger
     return (
-            <img className="miniLogo tooltipped" data-position="bottom" data-tooltip={miniName}
+            <img className={myClass} data-position="bottom" data-tooltip={miniName}
                 src={whichImage(miniName)} alt={miniName} />
     );
 }

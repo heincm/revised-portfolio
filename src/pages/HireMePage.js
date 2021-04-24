@@ -1,6 +1,9 @@
 import React from 'react';
 import Badge from '../components/Badge';
 
+// TODO: Fix the issue with the badge
+// TODO: Update the resume and remove my phone number and address if it's there
+
 class HireMe extends React.Component {
     render() {
         return (

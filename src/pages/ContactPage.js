@@ -1,5 +1,6 @@
 import React from 'react';
-
+// TODO: Fix the issue of the labels being over placeholder
+// TODO: Get this thing to actually send out emails
 class Contact extends React.Component {
     render() {
         return (

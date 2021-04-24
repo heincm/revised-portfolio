@@ -82,7 +82,7 @@
     },
     {
         "title": "LIRI",
-        "description": "A CLI app that makes API various API calls.",
+        "description": "A CLI app that makes various API calls.",
         "img": "/images/Liri.png",
         "github": "https://github.com/heincm/LIRI",
         "link": "https://drive.google.com/file/d/1iE29KVr3TUbnbvFSAdUO6Y-pVqNuKq5B/view?usp=sharing",
@@ -137,6 +137,20 @@
             "CSS3",
             "Bootstrap",
             "jQuery"
+        ]
+    },
+    {
+        "title": "StreetRide",
+        "description": "A mobile application designed to provide information for individuals getting around via bicycle, scooter, on foot, in a wheelchair, or any other alternative transportation method.",
+        "img": "/images/streetride.png",
+        "github": "https://itunes.apple.com/us/app/streetride/id1461678165?mt=8",
+        "link": "https://play.google.com/store/apps/details?id=com.saferiderz.streetride&hl=en_US",
+        "technologies": [
+            "React Native",
+            "Expressjs",
+            "nodeJS",
+            "MySQL",
+            "Sequelize"
         ]
     }
 ]
