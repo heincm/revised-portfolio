@@ -140,6 +140,29 @@
         ]
     },
     {
+        "title": "React Memory Game",
+        "description": "An Avengers themed point and click game built with React",
+        "img": "/images/gameplay.gif",
+        "github": "https://github.com/heincm/react-game",
+        "link": "https://heincm.github.io/react-game/",
+        "technologies": [
+            "React",
+            "CSS3",
+            "JavaScript",
+            "Bootstrap"
+        ]        
+    },
+    {
+        "title": "Twitter Bot",
+        "description": "A Twitter bot that tweets updates Bitcoin prices, follows new followers, tweets at new followers and favorites Bitcoin related tweets.",
+        "img": "/images/twitterBot.png",
+        "github": "https://github.com/heincm/twitter_bot",
+        "link": "https://twitter.com/BitconBot",
+        "technologies": [
+            "Python"
+        ]        
+    },
+    {
         "title": "StreetRide",
         "description": "A mobile application designed to provide information for individuals getting around via bicycle, scooter, on foot, in a wheelchair, or any other alternative transportation method.",
         "img": "/images/streetride.png",

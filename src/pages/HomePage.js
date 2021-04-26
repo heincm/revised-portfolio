@@ -2,8 +2,12 @@ import React from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom'
 import { ParallaxBanner } from 'react-scroll-parallax';
+
 class HomePage extends React.Component {
-    render() {
+
+    componentDidMount() {
+        document.title = "Home | Chris Hein"
+    }    render() {
         return (
             <>
                 <ParallaxBanner

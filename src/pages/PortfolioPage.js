@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import PortfolioCard from '../components/PortfolioCard'
 import MiniLogo from '../components/MiniLogo'
 import projects from '../../src/projects.json'
-// TODO: Need to figure out how to change text for street right
-// TODO: also need to reverse these so street right comes up first
-// TODO: add the python twitter bot to this list
+// TODO: Need to figure out how to change text for street ride
+// TODO: also need to reverse these so street ride comes up first
 class PortfolioPage extends Component {
+    componentDidMount() {
+        document.title = "Portfolio | Chris Hein"
+    }
 
     render() {
         const myProjects = projects.map(element => {

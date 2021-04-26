@@ -30,9 +30,11 @@ let whichImage = function (miniName) {
         case 'MongoDB':
             return 'images/MongoDB.png'
         case 'React Native':
-            return 'images/react.svg'
+            return 'images/reactNative.png'
         case 'Sequelize':
             return 'images/sequelize.png'
+        case 'Python':
+            return 'images/python.webp'
         default: return 'bye'
     }
 }
