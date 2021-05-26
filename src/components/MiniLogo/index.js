@@ -41,7 +41,6 @@ let whichImage = function (miniName) {
 
 function MiniLogo(props) {
     const { miniName, myClass } = props
-debugger
     return (
             <img className={myClass} data-position="bottom" data-tooltip={miniName}
                 src={whichImage(miniName)} alt={miniName} />
