@@ -10,7 +10,7 @@ class PortfolioPage extends Component {
     }
 
     render() {
-        const myProjects = projects.map(element => {
+        const myProjects = projects.reverse().map(element => {
             return (<PortfolioCard
                 src={element.img}
                 alt={element.title}
