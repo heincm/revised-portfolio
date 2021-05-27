@@ -16,10 +16,6 @@ nav .brand-logo {
   color: rgb(255, 255, 255);
 }
 
-.nav, .footer{
-    background-color: rgb(2,119,181);
-  }
-
 p {
   line-height: 2rem;
 }

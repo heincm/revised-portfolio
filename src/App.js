@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import HomePage from './pages/HomePage'
 import LanguagesPage from './pages/LanguagesPage'
-import Header from './components/Header'
+import CustomHeader from './components/CustomHeader'
 import Footer from './components/Footer'
 import Contact from './pages/ContactPage'
 import {
@@ -17,7 +17,7 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <Router>
-      <Header />
+      <CustomHeader />
       <div className='page-layout-container'>
         <Switch>
           <Route exact path="/">
