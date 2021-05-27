@@ -6,7 +6,6 @@ import './LanguagesPage.css'
 const technologyArray = projects.map(entry => entry.technologies)
 const technologySet = new Set(technologyArray.flat())
 const techArray = Array.from(technologySet)
-
 const technologies = techArray.map(alright => {
     return (<MiniLogo miniName={alright} key={alright} myClass='big-logo' />)
 })

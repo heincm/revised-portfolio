@@ -7,7 +7,9 @@ class HomePage extends React.Component {
 
     componentDidMount() {
         document.title = "Home | Chris Hein"
-    }    render() {
+    }    
+    
+    render() {
         return (
             <>
                 <ParallaxBanner
@@ -24,14 +26,12 @@ class HomePage extends React.Component {
                             amount: 0.0,
                             slowerScrollRate: true,
                         }
-
                     ]}
                     style={{
                         height: '300px',
                         marginTop: '-20px',
                     }}
                 >
-
                 </ParallaxBanner>
 
                 <div className="container containerized">
