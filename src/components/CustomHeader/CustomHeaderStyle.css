@@ -1,0 +1,65 @@
+.nav{
+    background-color: #24292e;
+  }
+
+.brand-logo {
+    position: absolute;
+    left: 0px;
+}
+
+.ant-menu-horizontal > li > .menu_item {
+  color: white;
+}
+
+.mobile-nav {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: white;
+}
+
+.mobile-nav svg {
+  height: 24px;
+  width: 24px;
+  color: white;
+}
+
+.large-nav {
+  border: none;
+}
+
+/* svg:hover {
+  color: #1890ff;
+} */
+
+.ant-menu {
+  /* background-color: rgb(2,119,181); */
+  background-color: #24292e;
+}
+.ant-menu-sub.ant-menu-inline{
+  background-color: #24292e;
+  color: white;
+
+}
+
+.ant-menu-item a {
+  color: white;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #24292e;
+}
+
+@media (min-width: 800px) {
+  
+.mobile-nav {
+  display: none;
+}
+
+}
+
+@media (max-width: 799px) {
+  .large-nav {
+    display: none;
+  }
+}
