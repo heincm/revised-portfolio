@@ -2,22 +2,12 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import './CustomHeaderStyle.css';
 import { Link } from 'react-router-dom';
-// import { NavLink } from 'react-router-dom';
-import { Menu, Layout } from 'antd';
-import { MailOutlined, HomeOutlined, MenuOutlined, LaptopOutlined, ToolOutlined } from '@ant-design/icons';
+import { Menu} from 'antd';
+import { MailOutlined, HomeOutlined, MenuOutlined, LaptopOutlined, ToolOutlined, IdcardOutlined } from '@ant-design/icons';
 const { SubMenu } = Menu
 
 
 class CustomHeader extends React.Component {
-
-    state = {
-        current: 'mail',
-    };
-
-    handleClick = e => {
-        console.log('click ', e);
-        this.setState({ current: e.key });
-    };
 
     render() {
 
@@ -30,41 +20,40 @@ class CustomHeader extends React.Component {
             {
                 name: "Portfolio",
                 link: "/portfolio",
-                icon: <LaptopOutlined />
+                icon: <LaptopOutlined />,
             },
             {
                 name: "Technologies",
                 link: "/languages",
-                icon: <ToolOutlined />
+                icon: <ToolOutlined />,
             },
             {
                 name: "Hire Me",
                 link: "/hireme",
-                icon: <MailOutlined />
+                icon: <IdcardOutlined />,
+                // disabled: true
             },
             {
                 name: "Contact",
                 link: "/contact",
-                icon: <MailOutlined />
+                icon: <MailOutlined />,
             }
         ]
 
         const menuies = menuItems.map(e => {
             return (
-                <Menu.Item className="menu_item" key={e.name}>
+                <Menu.Item className="menu_item" key={e.name} disabled={e.disabled ? true : false}>
                     <Link to={e.link} className="menu_item_two">
                         {e.icon}{e.name}
                     </Link>
                 </Menu.Item>)
         })
 
-        const { current } = this.state;
-
         return (
             <>
                 <nav className="nav" role="navigation">
                     <div className="nav-wrapper container">
-                        <Menu onClick={this.handleClick} mode="inline" className="mobile-nav">
+                        <Menu mode="inline" className="mobile-nav">
                             <SubMenu key="sub1" icon={<MenuOutlined />} title="Menu">
                                 {menuies}
                             </SubMenu>
