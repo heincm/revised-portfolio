@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import projects from '../../src/projects.json'
 import MiniLogo from '../components/MiniLogo'
 import './LanguagesPage.css'
@@ -18,9 +18,10 @@ class LanguagesPage extends React.Component {
         return (
             <>
                 <div className="container">
-                    <div className="row">
+                    <div className="row center-align" id="heading">
                         <h1>Technologies Used</h1>
-                        <p>Below is a growing list of languages and frameworks I have used.</p>
+                    </div>
+                    <div className="row">
                         {technologies}
                     </div>
                 </div>
