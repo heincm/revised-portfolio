@@ -20,8 +20,8 @@ class HomePage extends React.Component {
                             amount: 0.9,
                         },
                         {
-                            children: <h1 class="header center white-text" style={{marginTop: "30px", textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"}}>Hi, I'm <span id="mainHeader"
-                                class="header center teal-text text-lighten-2">Chris
+                            children: <h1 className="header center white-text" style={{marginTop: "30px", textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"}}>Hi, I'm <span id="mainHeader"
+                                className="header center teal-text text-lighten-2">Chris
                             Hein</span>. I'm a software engineer.</h1>,
                             amount: 0.0,
                             slowerScrollRate: true,
