@@ -1,39 +1,43 @@
-import React from 'react';
-import Badge from '../components/Badge';
+import React, { useEffect, useState } from 'react';
+function HireMe() {
 
-// TODO: Fix the issue with the badge
-// TODO: Update the resume and remove my phone number and address if it's there
-
-class HireMe extends React.Component {
-    componentDidMount() {
+    const [width, setWidth] = useState(window.innerWidth);
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
         document.title = "Hire Me | Chris Hein"
-    }
-    render() {
-        return (
-            <>
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    let isMobile = (width <= 768);
+
+    return (
+        <>
             <title>Hire Me</title>
-                <main>
+            <main>
+   
+                {isMobile && (
                     <div className="container">
-                        <div className="row">
-                            <h1 className="center-align">Hire Me</h1>
-                            <div className="col s12 m6">
-                                <p>Entry Level Web Developer with a strong professional background an excellent work ethic who is a
-                                highly motivated learner. Experienced in creating and displaying database information such as
-                                SQL to others in a way that is visually appealing and easy to understand for the past year.
-                                Highly skilled in managing multiple projects simultaneously, collaborating with key
-                                stakeholders, and providing innovative solutions to complex problems.</p>
-                                <p>To learn more about me, check out my <a href="Resume - Hein.pdf" target="_blank">resume</a>.</p>
-                                <p>You can also connect with me on LinkedIn.</p>
-                            </div>
-                            <div className="col s12 m6">
-                                <Badge />
-                            </div>
-                        </div>
-                    </div>
-                </main>
-            </>
-        )
-    }
+                        <h1 className="center-align">Hire Me</h1>
+                        <p>I am Self-motivated Software Engineer with an excellent professional background, strong work ethic,
+                        and a desire for continuous learning and development. Experienced in creating responsive front web and mobile
+                        applications as well as optimizing and automating development processes. Highly skilled in managing multiple
+                        projects simultaneously, collaborating with key stakeholders, and providing innovative solutions to complex problems.</p>
+                        <p>To learn more about me, check out my <a href="/images/Website_Resume.pdf" >resume</a>.</p>
+                        <p>You can also connect with me on <a href="http://www.linkedin.com/in/heincm">LinkedIn</a>.</p>
+                    </div>)}
+                {!isMobile && (<div>
+                    <object data="/images/Website_Resume.pdf" type="application/pdf" width="100%" height="700px" aria-label="Chris Hein Resume" />
+                </div>)}
+
+
+            </main>
+        </>
+    )
 }
 
 export default HireMe;
