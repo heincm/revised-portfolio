@@ -3,7 +3,6 @@ import PortfolioCard from '../components/PortfolioCard'
 import MiniLogo from '../components/MiniLogo'
 import projects from '../../src/projects.json'
 // TODO: Need to figure out how to change text for street ride
-// TODO: also need to reverse these so street ride comes up first
 class PortfolioPage extends Component {
     componentDidMount() {
         document.title = "Portfolio | Chris Hein"
@@ -31,7 +30,6 @@ class PortfolioPage extends Component {
                 <div className="container">
                     <div className="row">
                         <h1>Coding Projects</h1>
-                        <p>Check out the projects I've made!</p>
                         {myProjects}
                     </div>
                 </div>
