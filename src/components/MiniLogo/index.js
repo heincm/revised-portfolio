@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { Tooltip } from 'antd';
+import 'antd/dist/antd.css';
 
 let whichImage = function (miniName) {
     switch (miniName) {
@@ -39,11 +40,14 @@ let whichImage = function (miniName) {
     }
 }
 
+// TODO: add tooltip from ant for these items
 function MiniLogo(props) {
     const { miniName, myClass } = props
     return (
+        <Tooltip placement="top" title={miniName}>
             <img className={myClass} data-position="bottom" data-tooltip={miniName}
                 src={whichImage(miniName)} alt={miniName} />
+        </Tooltip>
     );
 }
 
