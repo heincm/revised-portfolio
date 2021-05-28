@@ -29,7 +29,7 @@ class PortfolioPage extends Component {
             <>
                 <div className="container">
                     <div className="row">
-                        <h1>Coding Projects</h1>
+                        <h1 className="center-align">Coding Projects</h1>
                         {myProjects}
                     </div>
                 </div>

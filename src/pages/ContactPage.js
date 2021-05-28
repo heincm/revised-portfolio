@@ -9,6 +9,7 @@ class Contact extends React.Component {
         return (
             <main>
             <div className="container contact-container">
+                <h1 className="center-align">Contact Me</h1>
                 <p>Use the form below to send me a message or email me at <a href="mailto:chris.m.hein@gmail.com?Subject=Website%20Email">chris.m.hein@gmail.com</a>.</p>
                 <div className="row">
                     <form className="col s12">
