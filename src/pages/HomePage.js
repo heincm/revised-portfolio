@@ -29,7 +29,6 @@ class HomePage extends React.Component {
                     ]}
                     style={{
                         height: '300px',
-                        marginTop: '-20px',
                     }}
                 >
                 </ParallaxBanner>
