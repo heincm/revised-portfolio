@@ -14,3 +14,9 @@
 .containerized {
   min-height: calc(100vh - 425px);
 }
+
+@media (max-width: 768px) {
+  .page-layout-container {
+    margin-top: 0px;
+  }
+}
