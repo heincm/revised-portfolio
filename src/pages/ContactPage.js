@@ -68,7 +68,7 @@ class Contact extends React.Component {
                             >
                                 <Button type="primary" htmlType="submit">
                                     Submit
-        </Button>
+                                </Button>
                             </Form.Item>
                         </Form>
                         {/* <form className="col s12">
