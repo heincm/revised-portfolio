@@ -16,9 +16,10 @@ const validateMessages = {
 };
 
 const onFinish = (values) => {
-    const { email, subject, text } = values.body
-    const data = { email, subject, text }
-    fetch('https://chris-portfolio-backend-api.herokuapp.com/email', {
+    let { email, text } = values.body;
+    let subject = `Website email from ${values.body.subject}`
+    const data = { email, subject, text };
+    fetch('http://localhost:5000/email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
