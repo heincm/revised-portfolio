@@ -1,8 +1,7 @@
+/* eslint-disable no-template-curly-in-string */
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import 'antd/dist/antd.css';
-
-// TODO: Get this thing to actually send out emails
 
 const validateMessages = {
     required: '${label} is required!',
@@ -15,11 +14,13 @@ const validateMessages = {
     },
 };
 
+let apiLink = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/email' : 'https://chris-portfolio-backend-api.herokuapp.com/email'
+
 const onFinish = (values) => {
     let { email, text } = values.body;
     let subject = `Website email from ${values.body.subject}`
     const data = { email, subject, text };
-    fetch('http://localhost:5000/email', {
+    fetch(apiLink, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
