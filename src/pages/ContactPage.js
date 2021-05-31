@@ -16,7 +16,22 @@ const validateMessages = {
 };
 
 const onFinish = (values) => {
-    console.log(values);
+    const { email, subject, text } = values.body
+    const data = { email, subject, text }
+    fetch('https://chris-portfolio-backend-api.herokuapp.com/email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 };
 class Contact extends React.Component {
     componentDidMount() {
@@ -29,9 +44,9 @@ class Contact extends React.Component {
                     <h1 className="center-align">Contact Me</h1>
                     <p>Use the form below to send me a message or email me at <a href="mailto:chris.m.hein@gmail.com?Subject=Website%20Email">chris.m.hein@gmail.com</a>.</p>
                     <div className="row">
-                        <Form name="nest-messages"  onFinish={onFinish} validateMessages={validateMessages}>
+                        <Form name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
                             <Form.Item
-                                name={['user', 'name']}
+                                name={['body', 'subject']}
                                 label="Name"
                                 rules={[
                                     {
@@ -42,8 +57,8 @@ class Contact extends React.Component {
                                 <Input />
                             </Form.Item>
                             <Form.Item
-                                name={['user', 'email']}
-                                label="Email"
+                                name={['body', 'email']}
+                                label="Email Address"
                                 rules={[
                                     {
                                         type: 'email',
@@ -53,18 +68,18 @@ class Contact extends React.Component {
                             >
                                 <Input />
                             </Form.Item>
-                            <Form.Item 
-                            name={['user', 'introduction']} 
-                            label="Introduction"
-                            rules={[
-                                {
-                                    required: true
-                                },
-                            ]}
+                            <Form.Item
+                                name={['body', 'text']}
+                                label="Message"
+                                rules={[
+                                    {
+                                        required: true
+                                    },
+                                ]}
                             >
                                 <Input.TextArea />
                             </Form.Item>
-                            <Form.Item 
+                            <Form.Item
                             >
                                 <Button type="primary" htmlType="submit">
                                     Submit
