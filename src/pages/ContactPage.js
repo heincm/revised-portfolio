@@ -1,139 +1,128 @@
 /* eslint-disable no-template-curly-in-string */
-import React from 'react';
-import { Form, Input, Button } from 'antd';
+import React, { useEffect } from 'react';
+import { Form, Input, Button, Modal } from 'antd';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom'
 import 'antd/dist/antd.css';
 
-const validateMessages = {
-    required: '${label} is required!',
-    types: {
-        email: '${label} is not a valid email!'
-    }
-};
 
-let apiLink = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/email' : 'https://chris-portfolio-backend-api.herokuapp.com/email'
-
-const onFinish = (values) => {
-    let { email, text } = values.body;
-    let subject = `Website email from ${values.body.subject}`
-    const data = { email, subject, text };
-    fetch(apiLink, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-};
-class Contact extends React.Component {
-    componentDidMount() {
+function Contact() {
+    useEffect(() => {
         document.title = "Contact Me | Chris Hein"
+    })
+
+    const validateMessages = {
+        required: '${label} is required!',
+        types: {
+            email: '${label} is not a valid email!'
+        }
+    };
+    
+    const apiLink = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/email' : 'https://chris-portfolio-backend-api.herokuapp.com/email'
+
+    const history = useHistory()
+
+    const modalConfig = {
+        title: 'Message Sent!',
+        content: (
+            <>
+                <p> Thanks for reaching out. If you're not redirected to the home page in a few seconds, 
+                    please <a href="/">click here</a>.</p>
+            </>
+        ),
+        onOk: () => history.push('/')
+    };
+
+    const errorModal = {
+        title: "Error Encountered",
+        content: (
+            <>
+                <p>Something went wrong and your message was not sent. 
+                    Please email me at <a href="mailto:chris.m.hein@gmail.com?Subject=Website%20Email">chris.m.hein@gmail.com</a>.</p>
+            </>
+        ),
+        onOk: () => history.push('/')
     }
-    render() {
-        return (
-            <main>
-                <div className="container contact-container">
-                    <h1 className="center-align">Contact Me</h1>
-                    <p>Use the form below to send me a message or email me at <a href="mailto:chris.m.hein@gmail.com?Subject=Website%20Email">chris.m.hein@gmail.com</a>.</p>
-                    <div className="row">
-                        <Form name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
-                            <Form.Item
-                                name={['body', 'subject']}
-                                label="Name"
-                                rules={[
-                                    {
-                                        required: true,
-                                    },
-                                ]}
-                            >
-                                <Input />
-                            </Form.Item>
-                            <Form.Item
-                                name={['body', 'email']}
-                                label="Email Address"
-                                rules={[
-                                    {
-                                        type: 'email',
-                                        required: true
-                                    },
-                                ]}
-                            >
-                                <Input />
-                            </Form.Item>
-                            <Form.Item
-                                name={['body', 'text']}
-                                label="Message"
-                                rules={[
-                                    {
-                                        required: true
-                                    },
-                                ]}
-                            >
-                                <Input.TextArea />
-                            </Form.Item>
-                            <Form.Item
-                            >
-                                <Button type="primary" htmlType="submit">
-                                    Submit
+
+    const makeCall = async (data) => {
+        const responseData = await axios.post(apiLink, data)
+            .then(function (response) {
+                console.log(response)
+                return response;
+            })
+            .catch(function (error) {
+                console.error(error)
+            })
+
+        if (responseData) {
+            setTimeout(() => {
+                Modal.destroyAll()
+                history.push('/')
+            }, 3000);
+            return Modal.info(modalConfig)
+        }
+        return Modal.error(errorModal)
+    }
+
+    const onFinish = (values) => {
+        let { email, text } = values.body;
+        let subject = `Website email from ${values.body.subject}`
+        const data = { email, subject, text };
+        makeCall(data);
+    };
+
+    return (
+        <main>
+            <div className="container contact-container">
+                <h1 className="center-align">Contact Me</h1>
+                <p>Use the form below to send me a message or email me at <a href="mailto:chris.m.hein@gmail.com?Subject=Website%20Email">chris.m.hein@gmail.com</a>.</p>
+                <div className="row">
+                    <Form name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+                        <Form.Item
+                            name={['body', 'subject']}
+                            label="Name"
+                            rules={[
+                                {
+                                    required: true,
+                                },
+                            ]}
+                        >
+                            <Input />
+                        </Form.Item>
+                        <Form.Item
+                            name={['body', 'email']}
+                            label="Email Address"
+                            rules={[
+                                {
+                                    type: 'email',
+                                    required: true
+                                },
+                            ]}
+                        >
+                            <Input />
+                        </Form.Item>
+                        <Form.Item
+                            name={['body', 'text']}
+                            label="Message"
+                            rules={[
+                                {
+                                    required: true
+                                },
+                            ]}
+                        >
+                            <Input.TextArea />
+                        </Form.Item>
+                        <Form.Item
+                        >
+                            <Button type="primary" htmlType="submit">
+                                Submit
                                 </Button>
-                            </Form.Item>
-                        </Form>
-                        {/* <form className="col s12">
-                            <div className="row">
-                                <div className="input-field col s6">
-                                    <i className="material-icons prefix">account_circle</i>
-                                    <input placeholder="John" id="first_name" type="text" className="validate" />
-                                    <label htmlFor="first_name">First Name</label>
-                                </div>
-                                <div className="input-field col s6">
-                                    <i className="material-icons prefix">account_circle</i>
-                                    <input placeholder="Smith" id="last_name" type="text" className="validate" />
-                                    <label htmlFor="last_name">Last Name</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col s12">
-                                    <i className="material-icons prefix">email</i>
-                                    <input id="email" type="email" className="validate" placeholder="you@youmail.com" />
-                                    <label htmlFor="email">Email Address</label>
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <div className="input-field col s12">
-                                    <i className="material-icons prefix">mode_edit</i>
-                                    <textarea id="text" className="materialize-textarea"
-                                        placeholder="Write your message here..."></textarea>
-                                    <label htmlFor="text">Message</label>
-                                </div>
-                            </div>
-                            <button className="btn waves-effect waves-light" type="submit" name="action">Submit
-                        <i className="material-icons right">send</i>
-                            </button>
-                            <div className="modal-trigger" href="#successModal"></div>
-                        </form>
-                    </div>
+                        </Form.Item>
+                    </Form>
                 </div>
-
-                <div id="successModal" className="modal">
-                    <div className="modal-content">
-                        <h4 className="center-align">Message Sent!</h4>
-                        <p className="center-align">Thanks for reaching out.</p>
-                        <p className="center-align"> If you're not redirected to the home page in a few seconds, please <a href="/">click here</a>.</p>
-                    </div>
-                </div> */}
-                    </div>
-                </div>
-
-            </main>
-        )
-    }
+            </div>
+        </main>
+    )
 }
 
 export default Contact;
