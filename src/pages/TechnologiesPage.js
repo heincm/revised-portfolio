@@ -1,7 +1,7 @@
 import React from 'react';
-import projects from '../../src/projects.json'
+import projects from '../projects.json'
 import MiniLogo from '../components/MiniLogo'
-import './LanguagesPage.css'
+import './TechnologiesPage.css'
 
 const technologyArray = projects.map(entry => entry.technologies)
 const technologySet = new Set(technologyArray.flat())
@@ -10,7 +10,7 @@ const technologies = techArray.map(alright => {
     return (<MiniLogo miniName={alright} key={alright} myClass='big-logo' />)
 })
 
-class LanguagesPage extends React.Component {
+class TechnologiesPage extends React.Component {
     componentDidMount() {
         document.title = "Technology | Chris Hein"
     }
@@ -30,4 +30,4 @@ class LanguagesPage extends React.Component {
     }
 }
 
-export default LanguagesPage;
+export default TechnologiesPage;

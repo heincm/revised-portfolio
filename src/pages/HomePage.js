@@ -38,7 +38,7 @@ class HomePage extends React.Component {
                         <div className="col s12">
                             <img className="responsive-img circle scale-transition" id="me" src={'/images/me.png'} alt="Me" />
                             <p> Hi! Welcome to my portfolio.</p>
-
+{/* TODO: probably need to update this whole thing to be more web dev/soft eng focused */}
                             <p>I'm originally from a small town of about 2,500 people in rural Nebraska. I went to school at
                             the University of Nebraska at Kearney (Go Lopes) where I graduated in 2009 with a double major
                             in psychology and sociology. In 2011 I completed my master’s degree and graduated with a M.S.Ed.
@@ -57,9 +57,10 @@ class HomePage extends React.Component {
 
                             <p>In the fall of 2018 I enrolled in the Georgia Tech Coding Bootcamp, a 24 week full-stack
                             development program. To see some of the technologies I've learned and become familiar with,
-                            click <Link to="/languages">here</Link>.
+                            click <Link to="/technologies">here</Link>.
                             </p>
-
+{/* TODO: Need to update this info with current experience at THD as well as contract work for emotionary 
+and Thinkful. */}
                             <p>I am actively seeking employment as a web developer and am open to work in most any inudstry
                             in the Atlanta metro area. You can see some of my development projects 
                             <Link to="/portfolio"> here</Link>.

@@ -34,7 +34,7 @@ let whichImage = function (miniName) {
         case 'MongoDB':
             return 'images/MongoDB.png'
         case 'React Native':
-            return 'images/reactNative.png'
+            return 'images/ReactNative.png'
         case 'Sequelize':
             return 'images/sequelize.png'
         case 'Python':

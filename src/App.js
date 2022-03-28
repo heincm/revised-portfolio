@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import HomePage from './pages/HomePage'
-import LanguagesPage from './pages/LanguagesPage'
+import TechnologiesPage from './pages/TechnologiesPage'
 import CustomHeader from './components/CustomHeader'
 import Footer from './components/Footer'
 import Contact from './pages/ContactPage'
@@ -26,8 +26,8 @@ function App() {
           <Route path="/home">
             <HomePage />
           </Route>
-          <Route path="/languages">
-            <LanguagesPage />
+          <Route path="/technologies">
+            <TechnologiesPage />
           </Route>
           <Route path="/portfolio">
             <PortfolioPage />

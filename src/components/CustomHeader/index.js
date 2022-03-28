@@ -14,7 +14,7 @@ class CustomHeader extends React.Component {
         const menuItems = [
             {
                 name: "Home",
-                link: "/index",
+                link: "/home",
                 icon: <HomeOutlined />,
             },
             {
@@ -24,7 +24,7 @@ class CustomHeader extends React.Component {
             },
             {
                 name: "Technologies",
-                link: "/languages",
+                link: "/technologies",
                 icon: <ToolOutlined />,
             },
             {
