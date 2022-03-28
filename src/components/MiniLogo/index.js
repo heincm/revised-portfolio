@@ -2,6 +2,9 @@ import React from 'react';
 import { Tooltip } from 'antd';
 import 'antd/dist/antd.css';
 
+// TODO: Update all images to be .png type tile
+// TODO: Have image file names match miniNAme to move toward eliminating switch case
+
 let whichImage = function (miniName) {
     switch (miniName) {
         case 'HTML5':
@@ -23,7 +26,7 @@ let whichImage = function (miniName) {
         case 'MySQL':
             return '/images/MySQL.png'
         case 'React':
-            return '/images/react.svg'
+            return '/images/react.png'
         case 'Handlebars':
             return '/images/handlebars.png'
         case 'Expressjs':

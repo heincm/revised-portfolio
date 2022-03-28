@@ -103,7 +103,7 @@
     },
     {
         "title": "Constructor-Word-Guess-2",
-        "description": "Build your own word guessing game by utilizing this npm project.",
+        "description": "Build your own word guessing game by utilizing this npm package.",
         "img": "/images/constructor-word-guess-2.gif",
         "github": "https://github.com/heincm/constructor-word-guess-2",
         "link": "https://drive.google.com/file/d/1QBb4oLxEPZ4cPszPmb46h198Dy9-CY33/view?usp=sharing",
@@ -154,7 +154,7 @@
     },
     {
         "title": "Twitter Bot",
-        "description": "A Twitter bot that tweets updates Bitcoin prices, follows new followers, tweets at new followers and favorites Bitcoin related tweets.",
+        "description": "A Twitter bot that tweets updated Bitcoin prices, follows new followers, tweets at new followers, and favorites Bitcoin related tweets.",
         "img": "/images/twitterBot.png",
         "github": "https://github.com/heincm/twitter_bot",
         "link": "https://twitter.com/BitconBot",
@@ -164,7 +164,7 @@
     },
     {
         "title": "StreetRide",
-        "description": "A mobile application that provides information for individuals getting around via bicycle, scooter, on foot, wheelchair, or any other alternative transportation method.",
+        "description": "A mobile application that provides information for individuals getting around via bicycle, scooter, on foot, wheelchair, or any other mode of non-motor vehicle transportation method.",
         "img": "/images/streetride.png",
         "github": "https://itunes.apple.com/us/app/streetride/id1461678165?mt=8",
         "link": "https://play.google.com/store/apps/details?id=com.saferiderz.streetride&hl=en_US",

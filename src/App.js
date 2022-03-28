@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/index">
+          <Route path="/home">
             <HomePage />
           </Route>
           <Route path="/languages">
