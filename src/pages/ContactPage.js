@@ -18,7 +18,7 @@ function Contact() {
         }
     };
     
-    const apiLink = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/email' : 'https://chris-portfolio-backend-api.herokuapp.com/email'
+    const apiLink = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/email' : 'https://chris-hein-backend.onrender.com/email'
 
     const history = useHistory()
 
@@ -26,7 +26,7 @@ function Contact() {
         title: 'Message Sent!',
         content: (
             <>
-                <p> Thanks for reaching out. If you're not redirected to the home page in a few seconds, 
+                <p> Thanks for reaching out. If you're not redirected to the home page in a few seconds,
                     please <a href="/">click here</a>.</p>
             </>
         ),
